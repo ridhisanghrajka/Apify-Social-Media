@@ -1,0 +1,54 @@
+{
+    "actorSpecification": 1,
+    "name": "social-media-ad-spy-tool",
+    "title": "Social Media Ad Spy Tool",
+    "description": "A crawler that scrapes ad libraries from Meta (Facebook), LinkedIn, and Google Ads for competitor analysis",
+    "version": "1.0.0",
+    "storages": {
+        "dataset": {
+            "actorSpecification": 1
+        }
+    },
+    "input": {
+        "title": "Input schema",
+        "type": "object",
+        "schemaVersion": 1,
+        "properties": {
+            "competitorName": {
+                "title": "Competitor Name",
+                "type": "string",
+                "description": "The name of the competitor to search for in ad libraries",
+                "editor": "textfield"
+            },
+            "startUrls": {
+                "title": "Start URLs",
+                "type": "array",
+                "description": "Array of URLs to start crawling from",
+                "editor": "stringList",
+                "default": [
+                    { "url": "https://www.facebook.com/ads/library/" },
+                    { "url": "https://www.linkedin.com/ad/targeting/" },
+                    { "url": "https://ads.google.com/transparency/" }
+                ]
+            },
+            "maxAds": {
+                "title": "Maximum Ads",
+                "type": "integer",
+                "description": "Maximum number of ads to scrape",
+                "editor": "number",
+                "default": 100,
+                "minimum": 1
+            },
+            "maxConcurrency": {
+                "title": "Maximum Concurrency",
+                "type": "integer",
+                "description": "Maximum number of concurrent requests",
+                "editor": "number",
+                "default": 2,
+                "minimum": 1,
+                "maximum": 10
+            }
+        },
+        "required": ["competitorName"]
+    }
+} 

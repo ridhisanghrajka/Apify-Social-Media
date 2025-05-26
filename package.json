@@ -1,0 +1,15 @@
+{
+  "name": "social-media-ad-spy-tool",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A crawler for scraping social media ad libraries from Meta, LinkedIn, and Google Ads",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "apify": "^3.0.0",
+    "crawlee": "^3.0.0",
+    "puppeteer": "^21.0.0"
+  }
+} 
